@@ -51,3 +51,22 @@ int m = Convert.ToInt32(Console.ReadLine());
 System.Console.Write("Укажите конец промежутка: ");
 int n = Convert.ToInt32(Console.ReadLine());
 System.Console.WriteLine($"Сумма натуральных элементов на промежутке от {m} до {n} равна {SumMN(m, n)}");
+
+string[] in_mas = { "DayOfWeek", "devor", "del", "mar", "sam", "prokm", "end" };
+
+string[] SearchForThrdCharString(string[] in_mas)
+{
+    string[] out_mas = new string[1];
+    int j = 0;
+    for (int i = 0; i < in_mas.Length; i++)
+    {
+        if (in_mas[i].Length <= 3)
+        {
+            Array.Resize(ref out_mas, 1 + j);
+            out_mas[j] = in_mas[i];
+            j++;
+        }
+    }
+    return out_mas;
+}
+System.Console.WriteLine(String.Join("|", SearchForThrdCharString(in_mas)));
